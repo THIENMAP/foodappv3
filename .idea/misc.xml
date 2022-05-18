@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/documents/app/src/main/res/layout/activity_chitiet.xml" value="0.22" />
+        <entry key="..\:/documents/app/src/main/res/layout/activity_dang_ki.xml" value="0.22447916666666667" />
+        <entry key="..\:/documents/app/src/main/res/layout/activity_dang_nhap.xml" value="0.25" />
+        <entry key="..\:/documents/app/src/main/res/layout/activity_dangky.xml" value="0.22447916666666667" />
+        <entry key="..\:/documents/app/src/main/res/layout/activity_dangnhap.xml" value="0.22447916666666667" />
         <entry key="..\:/documents/app/src/main/res/layout/activity_itemraucu.xml" value="0.22447916666666667" />
         <entry key="..\:/documents/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/documents/app/src/main/res/layout/activity_raucu.xml" value="0.25" />
