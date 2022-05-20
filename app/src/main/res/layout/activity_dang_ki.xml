@@ -30,6 +30,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:hint="Email"
+            android:id="@+id/email"
             android:inputType="textEmailAddress"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="10dp"
@@ -40,18 +41,19 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:id="@+id/line2dk"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintTop_toBottomOf="@+id/line1dk"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+            android:hint="Username"
+            android:id="@+id/username"
+
+            android:drawableLeft="@drawable/ic_baseline_people_alt_24"
             android:drawablePadding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -70,6 +72,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:hint="Password"
+            android:id="@+id/pass"
             android:inputType="textPassword"
             android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
             android:drawablePadding="10dp"
@@ -77,9 +80,50 @@
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/line4dk"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/line3dk"
+        tools:ignore="MissingConstraints">
 
-    <Button
-        android:id="@+id/btndn"
+        <com.google.android.material.textfield.TextInputEditText
+            android:hint="Password"
+            android:id="@+id/repass"
+            android:inputType="textPassword"
+            android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+            android:drawablePadding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/line5dk"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/line4dk"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:hint="Mobile"
+            android:id="@+id/mobile"
+            android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+            android:drawablePadding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btndangki"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/purple_700"
@@ -87,12 +131,12 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:text="Đăng kí"
-        app:layout_constraintTop_toBottomOf="@+id/line3dk"
+        app:layout_constraintTop_toBottomOf="@+id/line5dk"
 
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        app:layout_constraintTop_toBottomOf="@+id/btndn"
+        app:layout_constraintTop_toBottomOf="@+id/btndangki"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -105,7 +149,7 @@
             android:text="Đã có tài khoản ?"
             tools:ignore="MissingConstraints" />
         <TextView
-            android:id="@+id/txtdk"
+            android:id="@+id/txtdn1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#FF002E"

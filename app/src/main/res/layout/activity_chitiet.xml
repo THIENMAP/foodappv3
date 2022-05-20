@@ -17,6 +17,17 @@
             android:background="#33601B"
             app:title="Chi tiết sản phẩm"
             app:titleTextColor="@color/white">
+            <FrameLayout
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/giohang"
+                    android:src="@drawable/ic_baseline_shopping_cart_24"
+                    android:layout_width="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="35dp"/>
+            </FrameLayout>
         </androidx.appcompat.widget.Toolbar>
         <LinearLayout
             android:background="#C3D3DF"

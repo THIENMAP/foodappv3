@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBar();
 
         if(isConnected(this)){
-            Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_LONG).show();
             ActionViewFlipper();
             getLoaiSanPham();
             getSanpham();
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
     private void ActionBar() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
+        toolbar.setNavigationIcon(R.drawable.ic_baseline_list_24);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

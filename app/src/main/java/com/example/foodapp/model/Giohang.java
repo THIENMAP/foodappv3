@@ -1,13 +1,31 @@
 package com.example.foodapp.model;
 
 public class Giohang {
+    int idgiohang;
     int idsp;
-    int soluong;
+    String sosanphammua;
+    String idkhanhhang;
     String tensp;
     long gia;
-    String hinhanh;
+    String urlanh;
 
     public Giohang(){
+    }
+
+    public int getIdgiohang() {
+        return idgiohang;
+    }
+
+    public void setIdgiohang(int idgiohang) {
+        this.idgiohang = idgiohang;
+    }
+
+    public String getIdkhanhhang() {
+        return idkhanhhang;
+    }
+
+    public void setIdkhanhhang(String idkhanhhang) {
+        this.idkhanhhang = idkhanhhang;
     }
 
     public int getIdsp() {
@@ -18,12 +36,12 @@ public class Giohang {
         this.idsp = idsp;
     }
 
-    public int getSoluong() {
-        return soluong;
+    public String getSoluong() {
+        return sosanphammua;
     }
 
-    public void setSoluong(int soluong) {
-        this.soluong = soluong;
+    public void setSoluong(String soluong) {
+        this.sosanphammua = soluong;
     }
 
     public String getTensp() {
@@ -43,10 +61,11 @@ public class Giohang {
     }
 
     public String getHinhanh() {
-        return hinhanh;
+
+        return urlanh;
     }
 
     public void setHinhanh(String hinhanh) {
-        this.hinhanh = hinhanh;
+        this.urlanh = hinhanh;
     }
 }

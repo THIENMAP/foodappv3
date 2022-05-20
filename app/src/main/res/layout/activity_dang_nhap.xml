@@ -31,6 +31,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:hint="Email"
+            android:id="@+id/emaildn"
             android:inputType="textEmailAddress"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="10dp"
@@ -51,6 +52,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:hint="Password"
+            android:id="@+id/passdn"
             android:inputType="textPassword"
             android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
             android:drawablePadding="10dp"
@@ -59,7 +61,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btndn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
