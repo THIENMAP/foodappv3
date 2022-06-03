@@ -21,6 +21,7 @@ import com.example.foodapp.retrofit.ApiBanHang;
 import com.example.foodapp.retrofit.RetrofitClient;
 import com.example.foodapp.utils.Utils;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
@@ -46,6 +47,17 @@ public class ActivityGiohang extends AppCompatActivity {
         initControl();
         getData();
 
+
+    }
+
+    private void tongtien() {
+        int tong = 0;
+        for (int i = 0;i < giohangList.size();i++){
+            tong = tong + Integer.parseInt(Long.toString(giohangList.get(i).getGia())) *
+                    Integer.parseInt(giohangList.get(i).getSoluong());
+        }
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+        tonggiohang.setText(decimalFormat.format(Double.parseDouble(Integer.toString(tong)))+"đ");
     }
 
     private void getData() {
@@ -57,6 +69,8 @@ public class ActivityGiohang extends AppCompatActivity {
                         giohangModel -> {
                             if(giohangModel.isSuccess()){
                                 giohangList = giohangModel.getResult();
+                                //tinh tong tien
+                                tongtien();
                                 //khoi tao adapter
                                 giohangAdapter = new GiohangAdapter(getApplicationContext(),giohangList);
                                 recyclerViewgiohang.setAdapter(giohangAdapter);

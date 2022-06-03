@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     ListView listViewManHinhChinh;
     DrawerLayout drawerLayout;
+    ImageView icongiohang;
     Loaispadapter loaispadapter;
     List<Loaisp> mangloaisp;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         Anhxa();
         ActionBar();
+        control();
 
         if(isConnected(this)){
             //Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_LONG).show();
@@ -72,6 +74,16 @@ public class MainActivity extends AppCompatActivity {
         }else {
             Toast.makeText(getApplicationContext(),"không có internet",Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void control() {
+        icongiohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ActivityGiohang.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getEventClick() {
@@ -179,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigationview);
         listViewManHinhChinh = findViewById(R.id.listviewmanhinhchinh);
         drawerLayout = findViewById(R.id.drawerlayout);
+        icongiohang = findViewById(R.id.giohang);
         //khoi tao list
         mangloaisp = new ArrayList<>();
         mangSanpham = new ArrayList<>();

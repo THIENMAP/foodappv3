@@ -81,8 +81,6 @@ public class ActivityDangKi extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(),"Thành công",Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(getApplicationContext(),ActivityDangNhap.class);
                                         startActivity(intent);
-
-
                                     }else {
                                         Toast.makeText(getApplicationContext(),userModel.getMessage(),Toast.LENGTH_LONG).show();
                                     }
@@ -95,8 +93,6 @@ public class ActivityDangKi extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Nhập lại mật khẩu chưa đúng",Toast.LENGTH_SHORT).show();
             }
         }
-
-
     }
 
     private void initView() {

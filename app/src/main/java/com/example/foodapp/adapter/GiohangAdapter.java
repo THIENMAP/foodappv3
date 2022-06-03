@@ -8,10 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.foodapp.Interface.ImageClickListenner;
 import com.example.foodapp.R;
+
+import com.example.foodapp.activity.ActivityGiohang;
 import com.example.foodapp.model.Giohang;
 import com.example.foodapp.model.Sanpham;
 
@@ -43,6 +47,33 @@ public class GiohangAdapter extends RecyclerView.Adapter<GiohangAdapter.MyViewHo
         Glide.with(context).load(giohang.getHinhanh()).into(holder.anhsanpham);
         holder.tensp.setText(giohang.getTensp());
         holder.soluongsp.setText(giohang.getSoluong());
+        int sl = Integer.parseInt(giohang.getSoluong());
+        int gia = Integer.parseInt(Long.toString(giohang.getGia()));
+        int tamtinh = sl*gia;
+        //DecimalFormat decimalFormat1 = new DecimalFormat("###,###,###");
+        holder.giatt.setText(decimalFormat.format(Double.parseDouble(Integer.toString(tamtinh)))+"đ");
+        holder.setImageClickListenner(new ImageClickListenner() {
+            @Override
+            public void onImageClick(View view, int pos, int giatri) {
+                if(giatri == 1){
+                    if(Integer.parseInt(giohangList.get(pos).getSoluong()) >1){
+                        int slmoi = Integer.parseInt(giohangList.get(pos).getSoluong())-1;
+                        giohangList.get(pos).setSoluong(Integer.toString(slmoi));
+                    }
+                }else if(giatri==2){
+                    int slmoi = Integer.parseInt(giohangList.get(pos).getSoluong())+1;
+                    giohangList.get(pos).setSoluong(Integer.toString(slmoi));
+                }
+                holder.soluongsp.setText(giohangList.get(pos).getSoluong());
+                int sl = Integer.parseInt(giohangList.get(pos).getSoluong());
+                int gia = Integer.parseInt(Long.toString(giohangList.get(pos).getGia()));
+                int tamtinh = sl*gia;
+                //DecimalFormat decimalFormat1 = new DecimalFormat("###,###,###");
+                holder.giatt.setText(decimalFormat.format(Double.parseDouble(Integer.toString(tamtinh)))+"đ");
+                //tinh lai tong tien
+
+            }
+        });
 
     }
 
@@ -51,9 +82,10 @@ public class GiohangAdapter extends RecyclerView.Adapter<GiohangAdapter.MyViewHo
         return giohangList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView tensp,giasp,soluongsp;
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView tensp,giasp,soluongsp,giatt;
         ImageView anhsanpham,addsl,removesl;
+        ImageClickListenner imageClickListenner;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             removesl = itemView.findViewById(R.id.removesl);
@@ -61,7 +93,24 @@ public class GiohangAdapter extends RecyclerView.Adapter<GiohangAdapter.MyViewHo
             tensp = itemView.findViewById(R.id.tenspgiohang);
             giasp = itemView.findViewById(R.id.giaspgiohang);
             soluongsp = itemView.findViewById(R.id.slspgiohang);
+            giatt = itemView.findViewById(R.id.slspgiohang1);
             anhsanpham = itemView.findViewById(R.id.item_giohang);
+            //event click
+            addsl.setOnClickListener(this);
+            removesl.setOnClickListener(this);
+        }
+
+        public void setImageClickListenner(ImageClickListenner imageClickListenner) {
+            this.imageClickListenner = imageClickListenner;
+        }
+
+        @Override
+        public void onClick(View view) {
+            if(view == removesl){
+                imageClickListenner.onImageClick(view,getAdapterPosition(),1);
+            }else if(view==addsl){
+                imageClickListenner.onImageClick(view,getAdapterPosition(),2);
+            }
         }
     }
 }
