@@ -41,7 +41,6 @@ public class GiohangAdapter extends RecyclerView.Adapter<GiohangAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         //hbnhbb
-        //ihuhuhu
         Giohang giohang = giohangList.get(position);
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.giasp.setText(decimalFormat.format(Double.parseDouble(Long.toString(giohang.getGia())))+"đ");

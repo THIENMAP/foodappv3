@@ -98,6 +98,7 @@ public class ActivityDangKi extends AppCompatActivity {
     private void initView() {
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         email = findViewById(R.id.email);
+        //test v3
         pass = findViewById(R.id.pass);
         repass = findViewById(R.id.repass);
         username = findViewById(R.id.username);
